@@ -1,0 +1,24 @@
+[package]
+name = "circos-rs"
+version = "0.1.0"
+edition = "2021"
+description = "Circos-style circular genome plots for bacterial genomes and metagenomes"
+license = "MIT"
+
+[[bin]]
+name = "circos-rs"
+path = "src/main.rs"
+
+[dependencies]
+# Pure-Rust BAM/SAM reader (no htslib/C dependency required)
+noodles = { version = "0.75", features = ["bam", "bgzf", "sam"] }
+# indexmap and clap pinned to versions compatible with older rustc (newer
+# releases require the unstable `edition2024` Cargo feature). Bump these
+# once you're building with a newer toolchain (1.85+).
+indexmap = "=2.2.6"
+clap = { version = "=4.5.4", features = ["derive"] }
+anyhow = "1"
+
+[profile.release]
+opt-level = 3
+lto = true
