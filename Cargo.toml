@@ -1,9 +1,16 @@
 [package]
-name = "circos-rs"
-version = "0.1.0"
+name = "bacircos"
+version = "0.2.0"
 edition = "2021"
 description = "Circos-style circular genome plots for bacterial genomes and metagenomes"
 license = "MIT"
+readme = "README.md"
+authors = ["Gaurav Sablok <gsablok@proton.me>"]
+keywords = ["bioinformatics"]
+categories = ["science", "algorithms"]
+repository = "https://codeberg.org/gsablok/bacircos"
+homepage = "https://codeberg.org/gsablok/bacircos"
+
 
 [[bin]]
 name = "circos-rs"
